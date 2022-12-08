@@ -1,3 +1,4 @@
+
 /* COVID 19 DATA EXPLORATION
 
 USED JOINS, Temp tables, Windows functions, Aggregate functions,creating views, converting datatypes
