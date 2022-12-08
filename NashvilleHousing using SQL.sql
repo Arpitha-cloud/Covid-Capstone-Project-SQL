@@ -4,7 +4,7 @@ Cleaning data using SQL queries
 Select *
 From CapstoneProject.dbo.NashvilleHousing
 
---standardize date fromat
+--standardizing date fromat
 
 Select saleDateConverted, CONVERT(Date,SaleDate)
 From CapstoneProject.dbo.NashvilleHousing
@@ -93,9 +93,7 @@ SET OwnerSplitState = PARSENAME(REPLACE(OwnerAddress, ',', '.') , 1)
 Select *
 From CapstoneProject.dbo.NashvilleHousing
 
-------------------
 -- Change Y and N to Yes and No in "Sold as Vacant" field
-
 
 Select Distinct(SoldAsVacant), Count(SoldAsVacant)
 From CapstoneProject.dbo.NashvilleHousing
@@ -114,10 +112,9 @@ SET SoldAsVacant = CASE When SoldAsVacant = 'Y' THEN 'Yes'
 	   When SoldAsVacant = 'N' THEN 'No'
 	   ELSE SoldAsVacant
 	   END
---------------
 
-
--- Remove Duplicates
+-------
+-- Removing Duplicates
 
 WITH RowNumCTE AS(
 Select *,
